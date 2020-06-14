@@ -1,5 +1,5 @@
 # Eloquent ORM
 
-#### About loquent ORM
+#### About Eloquent ORM
 
 
