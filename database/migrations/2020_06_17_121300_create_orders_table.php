@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateOrdersTable extends Migration
 {
@@ -11,13 +11,13 @@ class CreateOrdersTable extends Migration
      *
      * @return void
      */
-    
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('order_id');
-            $table->unsignedInteger('student_id')->nullable();
-            $table->foreign('student_id')->references('student_id')->on('students');
+            // $table->id();
+            $table->uuid('order_id')->primary();
+            $table->integer('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->timestamps();
         });
     }

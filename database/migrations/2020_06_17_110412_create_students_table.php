@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateStudentsTable extends Migration
 {
@@ -11,17 +11,22 @@ class CreateStudentsTable extends Migration
      *
      * @return void
      */
-    
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('student_id');
-            $table->string('student_name');
+            //  $table->id();
+            // $table->bigIncrements('id');
+            // $table->bigInteger('id')->unsigned();
+            //$table->integer('student_id')->unsigned();
+            $table->integer('id');
+            $table->string('name');
+            $table->integer('course_ref_id')->nullable();
+            $table->integer('order_ref_id')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->primary('id');
         });
     }
 
