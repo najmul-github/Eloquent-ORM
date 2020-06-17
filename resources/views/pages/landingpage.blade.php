@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-	<div id="header_area">
+	<div id="content_area">
 		<div class="container" >
 			<div class="row">
 				<div class="col-md-12 col-lg-12">

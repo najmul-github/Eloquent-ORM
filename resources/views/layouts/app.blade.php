@@ -75,8 +75,8 @@
 
         <main class="py-4">
             @yield('content')
-            @include('inc.footer')
         </main>
     </div>
+    @include('inc.footer')
 </body>
 </html>
