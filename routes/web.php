@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('orders','OrderController');
+Route::resource('courses', 'CourseController');
+Route::resource('students', 'StudentController');
+Route::post('store','Auth\RegisterController@store')->name('store');
